@@ -95,5 +95,8 @@ public class Main {
 
         System.out.println(human1);
         System.out.println(human2);
+
+        human1.setSalary(399);
+        human1.getSalary();
     }
 }

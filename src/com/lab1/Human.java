@@ -3,6 +3,7 @@ package com.lab1;
 import devices.Car;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Human {
     public String name;
@@ -10,6 +11,24 @@ public class Human {
     public int height;
     public Animal pet;
     private ArrayList<Car> listOfCars;
+    private double salary;
+
+    public double getSalary() {
+        Date date = new Date();
+        System.out.println("Dane o wyplacie pobierane: " + date);
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        if (salary < 0) {
+            System.out.println("Nie mozna przypisac wartosci mniejszesz niz 0");
+        } else {
+            System.out.println("Nowe dane zostały wysłane do systemu księgowego");
+            System.out.println("Prosze odebrac aneks do umowy od Pani Hani z kadr");
+            System.out.println("ZUS i US już wiedzą o zmianie wypłaty, nie ma sensu ukrywać dochodu");
+            this.salary = salary;
+        }
+    }
 
     public Human(String name, int age, int height) {
         this.name = name;
