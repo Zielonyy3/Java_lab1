@@ -14,7 +14,7 @@ public class Main {
         Human human1 = new Human("Szymon", 21, 180);
         Human human2 = new Human("Jan", 45, 160);
 
-        Animal cat = new Animal("Kicia",  4, "cat");
+        Animal cat = new Animal("Kicia", 4, "cat");
         Animal dog = new Animal("Azor", 0, "snake");
 
         Phone samsung = new Phone("samsung", "s30", 6.4);
@@ -60,12 +60,25 @@ public class Main {
         humanList.add(tomek);
 
 
-        for(int i =0; i < humanList.size(); i++){
+        for (int i = 0; i < humanList.size(); i++) {
             System.out.println("------------------------------");
-            System.out.println("Imie: "+ humanList.get(i).name);
-            System.out.println("Wiek: "+ humanList.get(i).age);
-            System.out.println("Wzrost: "+ humanList.get(i).height);
+            System.out.println("Imie: " + humanList.get(i).name);
+            System.out.println("Wiek: " + humanList.get(i).age);
+            System.out.println("Wzrost: " + humanList.get(i).height);
             System.out.println("------------------------------");
         }
+
+        Car ferrari = new Car("l450", "ferrari");
+        human1.addCar(ferrari);
+
+        human1.getListOfCars().forEach((car) -> {
+            System.out.println("Model: " + car.model);
+            System.out.println("Producent: " + car.producer);
+            if (car.vMax != 0) {
+                System.out.println("V-max: " + car.vMax);
+            }
+            System.out.println();
+        });
+
     }
 }
