@@ -1,4 +1,4 @@
-package com.lab1;
+package devices;
 
 public enum CarBrands {
     Ferrari, Audi, Mercedes, Volkswagen, Lamborghini

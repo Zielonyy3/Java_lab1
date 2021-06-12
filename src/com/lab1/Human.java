@@ -1,5 +1,7 @@
 package com.lab1;
 
+import devices.Car;
+
 import java.util.ArrayList;
 
 public class Human {

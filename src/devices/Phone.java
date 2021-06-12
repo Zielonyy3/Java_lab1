@@ -1,4 +1,4 @@
-package com.lab1;
+package devices;
 
 import java.util.Date;
 

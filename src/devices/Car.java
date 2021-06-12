@@ -1,8 +1,8 @@
-package com.lab1;
+package devices;
 
 public class Car {
-    final String model;
-    final String producer;
+    public final String model;
+    public final String producer;
     public int vMax;
     public String color;
     public CarBrands brand;
