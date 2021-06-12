@@ -4,6 +4,7 @@ public class Human {
     public String name;
     public int age;
     public int height;
+    public Animal pet;
 
     public Human(String name, int age, int height) {
         this.name = name;
