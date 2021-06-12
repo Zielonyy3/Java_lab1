@@ -6,6 +6,7 @@ public class Car {
     public int vMax;
     public String color;
     public CarBrands brand;
+    public double price;
 
     public Car(String model, String producer) {
         this.model = model;

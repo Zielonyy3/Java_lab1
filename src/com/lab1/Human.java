@@ -12,6 +12,25 @@ public class Human {
     public Animal pet;
     private ArrayList<Car> listOfCars;
     private double salary;
+    private Car car;
+
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        if (this.salary > car.price) {
+            System.out.println("Udalo sie kupic samochod za gotowke");
+            this.car = car;
+        } else if (this.salary > car.price / 12) {
+            System.out.println("Udalo sie kupic samochod na kredyt");
+            this.car = car;
+        } else {
+            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+        }
+    }
+
 
     public double getSalary() {
         Date date = new Date();
