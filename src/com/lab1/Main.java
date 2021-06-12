@@ -70,18 +70,24 @@ public class Main {
         Car audiRs3 = new Car(Producer.Audi,  "rs3", 2003);
         Car audiA3 = new Car(Producer.Audi,  "a3", 2004);
 
-        System.out.println("Czy audi sa takie same? ");
-        System.out.println(audiRs3.equals(audiA3));
 
-        System.out.println(human1);
-        System.out.println(human2);
 
         human1.setSalary(399);
         human1.getSalary();
+        human1.setCar(audiA3);
+        human1.setAnimal(cat);
 
-        System.out.println(audiA3.toString());
-        System.out.println( audiRs3.toString());
-        System.out.println(samsung.toString());
-        System.out.println(xiaomi.toString());
+        try {
+            audiA3.sell(human1,human2,9800.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        try {
+            cat.sell(human1,human2,1420.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

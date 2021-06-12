@@ -1,6 +1,7 @@
 package com.lab1;
 
 import devices.Car;
+import devices.Phone;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,29 +14,54 @@ public class Human {
     private ArrayList<Car> listOfCars;
     private double salary;
     private Car car;
+    private Double cash = 20000.0;
+    private Animal animal;
+
+
+    public Animal getAnimal() {
+        return this.animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
 
 
     public Car getCar() {
-        return car;
+        return this.car;
     }
 
     public void setCar(Car car) {
-        if (this.salary > car.price) {
-            System.out.println("Udalo sie kupic samochod za gotowke");
-            this.car = car;
-        } else if (this.salary > car.price / 12) {
-            System.out.println("Udalo sie kupic samochod na kredyt");
-            this.car = car;
-        } else {
-            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
-        }
+        this.car = car;
     }
 
+    public boolean hasCar(Car newCar) {
+        if (this.car == newCar) {
+            return true;
+        }
+        return false;
+    }
+
+    public void removeCar() {
+        this.car = null;
+    }
 
     public double getSalary() {
         Date date = new Date();
         System.out.println("Dane o wyplacie pobierane: " + date);
         return salary;
+    }
+
+    public void sellCar() {
+        this.car = null;
     }
 
     public void setSalary(double salary) {

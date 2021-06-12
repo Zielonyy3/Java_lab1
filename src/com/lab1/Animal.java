@@ -1,6 +1,6 @@
 package com.lab1;
 
-public class Animal {
+public class Animal implements Saleable{
     public String name;
     public int numberOfLegs;
     private double weight;
@@ -62,5 +62,26 @@ public class Animal {
         tmpString += "Waga: " + this.weight + "\n";
 
         return tmpString;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (buyer.getCash() >= price){
+            if (seller.pet == this){
+                buyer.pet = this;
+                seller.pet = null;
+                buyer.setCash(buyer.getCash() - price);
+                seller.setCash(seller.getCash() + price);
+                System.out.println("\nSprzedano zwierzę: " + this.species + " " + this.name + ". Kupił " + buyer.name + " od " + seller.name + " za " + price + ".");
+                System.out.println(buyer.name + " ma teraz " + buyer.getCash() + ", a " + seller.name + " ma " + seller.getCash() + ".");
+                System.out.println(seller.name + " ma zwierzę: " + seller.pet);
+                System.out.println(buyer.name + " ma zwierzę: " + buyer.pet);
+            } else {
+                throw new Exception("Klient nie ma tego zwierzęcia");
+            }
+
+        } else {
+            throw new Exception("Klient nie ma tyle kasy!");
+        }
     }
 }
