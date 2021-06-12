@@ -1,5 +1,6 @@
 package com.lab1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -20,16 +21,36 @@ public class Main {
         Phone xiaomi = new Phone("xiaomi", "note", 5.2);
 
 
+        StringBuilder compareAnimalsText = new StringBuilder("Waga ");
         if (cat.weight > dog.weight) {
-            System.out.println("Waga " + cat.getName() + " jest wieksza niz " + dog.getName() + "!");
+            compareAnimalsText.append(cat.getName());
+            compareAnimalsText.append(" jest wieksza niz ");
+            compareAnimalsText.append(dog.getName());
+            compareAnimalsText.append("!");
+            System.out.println(compareAnimalsText);
         } else {
             System.out.println("Waga " + dog.getName() + " jest wieksza niz " + cat.getName() + "!");
         }
-
         if (samsung.screenSize > xiaomi.screenSize) {
             System.out.println("Telefon " + samsung.brand + " " + samsung.model + " jest wiekszy niz " + xiaomi.brand + " " + xiaomi.model + "!");
         } else {
             System.out.println("Telefon " + xiaomi.brand + " " + xiaomi.model + " jest wiekszy niz " + samsung.brand + " " + samsung.model + "!");
+        }
+
+        ArrayList<Human> humanList = new ArrayList<>();
+        humanList.add(human1);
+        humanList.add(human2);
+
+        Human tomek = new Human("Tomasz", 13, 165);
+        humanList.add(tomek);
+
+
+        for(int i =0; i < humanList.size(); i++){
+            System.out.println("------------------------------");
+            System.out.println("Imie: "+ humanList.get(i).name);
+            System.out.println("Wiek: "+ humanList.get(i).age);
+            System.out.println("Wzrost: "+ humanList.get(i).height);
+            System.out.println("------------------------------");
         }
     }
 }
