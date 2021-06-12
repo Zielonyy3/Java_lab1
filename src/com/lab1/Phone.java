@@ -23,4 +23,13 @@ public class Phone {
     public void setDateOfProduction(Date dateOfProduction) {
         this.dateOfProduction = dateOfProduction;
     }
+
+    public String toString() {
+        String tmpString = "RAM " + this.ramMemory + "\n";
+        tmpString += "Rozmiar ekranu: " + this.screenSize + "\n";
+        tmpString += "Marka: " + this.brand + "\n";
+        tmpString += "Model: " + this.model + "\n";
+
+        return tmpString;
+    }
 }

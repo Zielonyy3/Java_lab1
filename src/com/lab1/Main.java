@@ -80,5 +80,16 @@ public class Main {
             System.out.println();
         });
 
+        ferrari.brand = CarBrands.Ferrari;
+        Car audiRs3 = new Car("a3", "audi");
+        audiRs3.brand = CarBrands.Audi;
+        Car audiA3 = new Car("a3", "audi");
+        audiA3.brand = CarBrands.Audi;
+
+        System.out.println("Czy audi sa takie same? ");
+        System.out.println(audiRs3.equals(audiA3));
+
+        System.out.println(human1);
+        System.out.println(human2);
     }
 }

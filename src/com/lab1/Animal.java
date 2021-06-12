@@ -55,4 +55,12 @@ public class Animal {
     public double getWeight() {
         return this.weight;
     }
+
+    public String toString() {
+        String tmpString = "Imie " + this.name + "\n";
+        tmpString += "Gatunek: " + this.species + "\n";
+        tmpString += "Waga: " + this.weight + "\n";
+
+        return tmpString;
+    }
 }

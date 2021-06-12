@@ -24,4 +24,23 @@ public class Human {
         this.listOfCars.add(car);
     }
 
+    public String toString() {
+        String tmpString = "-------------------\n";
+        tmpString += "Imie " + this.name + "\n";
+        tmpString += "Wiek: " + this.age + "\n";
+        tmpString += "Wzrost: " + this.height + "\n";
+        if (this.pet != null) {
+            tmpString += "Imie zwierzecia: " + this.pet.name + "\n";
+        }
+
+        tmpString += "Liczba aut: " + this.listOfCars.size() + "\n";
+
+        if (this.listOfCars.size() > 0) {
+            for (Car car : this.getListOfCars()) {
+                tmpString += car.toString();
+            }
+        }
+        return tmpString;
+    }
+
 }
