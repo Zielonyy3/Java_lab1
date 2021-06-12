@@ -1,7 +1,7 @@
 package com.lab1;
 
 import devices.Car;
-import devices.CarBrands;
+import devices.Producer;
 import devices.Phone;
 
 import java.util.ArrayList;
@@ -21,8 +21,8 @@ public class Main {
         Animal cat = new Animal("Kicia", 4, "cat");
         Animal dog = new Animal("Azor", 0, "snake");
 
-        Phone samsung = new Phone("samsung", "s30", 6.4);
-        Phone xiaomi = new Phone("xiaomi", "note", 5.2);
+        Phone samsung = new Phone(Producer.Samsung, "s30", 2019, 6.4);
+        Phone xiaomi = new Phone(Producer.Xiaomi, "note", 2020, 5.2);
 
 
         cat.feed();
@@ -38,23 +38,6 @@ public class Main {
         cat.takeForAWalk();
         cat.takeForAWalk();
         cat.feed();
-
-
-//        StringBuilder compareAnimalsText = new StringBuilder("Waga ");
-//        if (cat.weight > dog.weight) {
-//            compareAnimalsText.append(cat.getName());
-//            compareAnimalsText.append(" jest wieksza niz ");
-//            compareAnimalsText.append(dog.getName());
-//            compareAnimalsText.append("!");
-//            System.out.println(compareAnimalsText);
-//        } else {
-//            System.out.println("Waga " + dog.getName() + " jest wieksza niz " + cat.getName() + "!");
-//        }
-        if (samsung.screenSize > xiaomi.screenSize) {
-            System.out.println("Telefon " + samsung.brand + " " + samsung.model + " jest wiekszy niz " + xiaomi.brand + " " + xiaomi.model + "!");
-        } else {
-            System.out.println("Telefon " + xiaomi.brand + " " + xiaomi.model + " jest wiekszy niz " + samsung.brand + " " + samsung.model + "!");
-        }
 
         ArrayList<Human> humanList = new ArrayList<>();
         humanList.add(human1);
@@ -72,7 +55,7 @@ public class Main {
             System.out.println("------------------------------");
         }
 
-        Car ferrari = new Car("l450", "ferrari");
+        Car ferrari = new Car(Producer.Ferrari,  "l450", 2010);
         human1.addCar(ferrari);
 
         human1.getListOfCars().forEach((car) -> {
@@ -84,11 +67,8 @@ public class Main {
             System.out.println();
         });
 
-        ferrari.brand = CarBrands.Ferrari;
-        Car audiRs3 = new Car("a3", "audi");
-        audiRs3.brand = CarBrands.Audi;
-        Car audiA3 = new Car("a3", "audi");
-        audiA3.brand = CarBrands.Audi;
+        Car audiRs3 = new Car(Producer.Audi,  "rs3", 2003);
+        Car audiA3 = new Car(Producer.Audi,  "a3", 2004);
 
         System.out.println("Czy audi sa takie same? ");
         System.out.println(audiRs3.equals(audiA3));
@@ -98,5 +78,10 @@ public class Main {
 
         human1.setSalary(399);
         human1.getSalary();
+
+        System.out.println(audiA3.toString());
+        System.out.println( audiRs3.toString());
+        System.out.println(samsung.toString());
+        System.out.println(xiaomi.toString());
     }
 }
