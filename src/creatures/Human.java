@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Human extends Animal{
-    public String name;
     public int age;
     public int height;
     public Animal pet;
@@ -17,8 +16,7 @@ public class Human extends Animal{
     private Animal animal;
 
     public Human(String name, int age, int height) {
-        super("homo sapiens", 2, "human");
-        this.name = name;
+        super(name, 2, "human");
         this.age = age;
         this.height = height;
         this.listOfCars = new ArrayList<>();

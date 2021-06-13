@@ -1,6 +1,6 @@
 package creatures;
 
-public class Animal implements Saleable{
+public abstract class Animal implements Saleable, Feedable{
     public String name;
     public int numberOfLegs;
     private double weight;
@@ -24,15 +24,6 @@ public class Animal implements Saleable{
         }
     }
 
-    public void feed() {
-        if(isAlive){
-            this.weight += 2;
-            System.out.println(this.name + " waży teraz " + this.weight);
-
-        }else{
-            System.out.println("Twoje zwierze nie żyje.");
-        }
-    }
 
     public void takeForAWalk() {
         if(isAlive){
@@ -87,5 +78,14 @@ public class Animal implements Saleable{
         } else {
             throw new Exception("Klient nie ma tyle kasy!");
         }
+    }
+
+    public void feed(double FoodWeight) {
+        this.setWeight(this.getWeight()+ FoodWeight);
+    }
+
+    @Override
+    public void feed() {
+        System.out.println("Mao!");
     }
 }

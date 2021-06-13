@@ -1,7 +1,9 @@
 package com.lab1;
 
 import creatures.Animal;
+import creatures.FarmAnimal;
 import creatures.Human;
+import creatures.Pet;
 import devices.Car;
 import devices.Producer;
 import devices.Phone;
@@ -21,8 +23,9 @@ public class Main {
         Human human2 = new Human("Jan", 45, 160);
         Human human3 = new Human("Tomek", 45, 160);
 
-        Animal cat = new Animal("Kicia", 4, "cat");
-        Animal dog = new Animal("Azor", 0, "snake");
+        Animal cat = new Pet("Kicia", 4, "cat");
+        Animal dog = new Pet("Azor", "dog");
+        Animal cow = new FarmAnimal("Mucka", 4);
 
         Phone samsung = new Phone(Producer.Samsung, "s30", 2019, 6.4);
         Phone xiaomi = new Phone(Producer.Xiaomi, "note", 2020, 5.2);
