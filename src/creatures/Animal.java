@@ -1,4 +1,4 @@
-package com.lab1;
+package creatures;
 
 public class Animal implements Saleable{
     public String name;
@@ -20,6 +20,7 @@ public class Animal implements Saleable{
             case "cat" -> this.weight = 15;
             case "horse" -> this.weight = 552.4;
             case "snake" -> this.weight = 3;
+            case "human" -> this.weight = 70;
         }
     }
 
@@ -67,7 +68,7 @@ public class Animal implements Saleable{
     @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception {
         if (buyer.getCash() >= price){
-            if (seller.pet == this){
+            if (seller.pet == this && !(this instanceof Human)){
                 buyer.pet = this;
                 seller.pet = null;
                 buyer.setCash(buyer.getCash() - price);
@@ -76,7 +77,10 @@ public class Animal implements Saleable{
                 System.out.println(buyer.name + " ma teraz " + buyer.getCash() + ", a " + seller.name + " ma " + seller.getCash() + ".");
                 System.out.println(seller.name + " ma zwierzę: " + seller.pet);
                 System.out.println(buyer.name + " ma zwierzę: " + buyer.pet);
-            } else {
+            }else if(this instanceof Human){
+                throw new Exception("Handel ludźmi jest niedozwolony!");
+            }
+            else {
                 throw new Exception("Klient nie ma tego zwierzęcia");
             }
 

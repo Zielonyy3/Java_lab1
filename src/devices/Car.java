@@ -1,7 +1,7 @@
 package devices;
 
-import com.lab1.Human;
-import com.lab1.Saleable;
+import creatures.Human;
+import creatures.Saleable;
 
 public class Car extends Device implements Saleable {
     public int vMax;

@@ -1,5 +1,7 @@
 package com.lab1;
 
+import creatures.Animal;
+import creatures.Human;
 import devices.Car;
 import devices.Producer;
 import devices.Phone;
@@ -17,6 +19,7 @@ public class Main {
 
         Human human1 = new Human("Szymon", 21, 180);
         Human human2 = new Human("Jan", 45, 160);
+        Human human3 = new Human("Tomek", 45, 160);
 
         Animal cat = new Animal("Kicia", 4, "cat");
         Animal dog = new Animal("Azor", 0, "snake");
@@ -77,15 +80,21 @@ public class Main {
         human1.setCar(audiA3);
         human1.setAnimal(cat);
 
+
         try {
             audiA3.sell(human1,human2,9800.0);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-
         try {
             cat.sell(human1,human2,1420.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            human1.sell(human3,human2,100.0);
         } catch (Exception e) {
             e.printStackTrace();
         }

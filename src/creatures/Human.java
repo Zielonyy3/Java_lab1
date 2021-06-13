@@ -1,12 +1,11 @@
-package com.lab1;
+package creatures;
 
 import devices.Car;
-import devices.Phone;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Human {
+public class Human extends Animal{
     public String name;
     public int age;
     public int height;
@@ -17,6 +16,13 @@ public class Human {
     private Double cash = 20000.0;
     private Animal animal;
 
+    public Human(String name, int age, int height) {
+        super("homo sapiens", 2, "human");
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.listOfCars = new ArrayList<>();
+    }
 
     public Animal getAnimal() {
         return this.animal;
@@ -75,12 +81,6 @@ public class Human {
         }
     }
 
-    public Human(String name, int age, int height) {
-        this.name = name;
-        this.age = age;
-        this.height = height;
-        this.listOfCars = new ArrayList<>();
-    }
 
     public ArrayList<Car> getListOfCars() {
         return listOfCars;
